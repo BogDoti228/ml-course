@@ -91,12 +91,12 @@ class LossAndDerivatives:
 
         mean_dimension = Y.shape[1]
 
-        if mean_dimension == 1:
+        if Y.ndim == 1:
             mean_dimension = 1
 
-        gradient = 2 / X.shape[0] * X.T.dot(E) / mean_dimension
+        gradient = ((2 / X.shape[0]) * X.T.dot(E)) / mean_dimension
 
-        return gradient
+        return 0
 
     @staticmethod
     def mae_derivative(X, Y, w):
@@ -119,7 +119,7 @@ class LossAndDerivatives:
 
         mean_dimension = Y.shape[1]
 
-        if mean_dimension == 1:
+        if Y.ndim == 1:
             mean_dimension = 1
 
         gradient = 1 / X.shape[0] * X.T.dot(E) / mean_dimension
