@@ -96,7 +96,7 @@ class LossAndDerivatives:
 
         gradient = ((2 / X.shape[0]) * X.T.dot(E)) / mean_dimension
 
-        return 0
+        return gradient
 
     @staticmethod
     def mae_derivative(X, Y, w):
